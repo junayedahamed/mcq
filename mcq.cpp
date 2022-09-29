@@ -34,7 +34,7 @@ int main()
 	for (int i = 1; i <= last; i++)
 	{
 
-		cout << "Hey! What is the " << i << ": answer" << endl;
+		cout  << i << ":" << endl;
 		cin >> input;
 		if (input == correct_value[i])
 		{
