@@ -1,2 +1,0 @@
-This is MCQ question Scanner Programm
-</br>
