@@ -1,5 +1,5 @@
 #include <iostream>
-
+#include<conio.h>
 using namespace std;
 int main()
 {
@@ -8,7 +8,7 @@ int main()
 
 	char check;
 	char input;
-	int last=0;
+	int last;
 	int cc = 0;
 	int mc = 0;
 	int ag = 0; //ag= Ans given
@@ -32,8 +32,8 @@ int main()
 	}
 
 	// friend asked
-	system("clear");
-	// void clrscr();
+	// system("clear");
+	void clrscr();
 
 	cout << "Thanks for input" << endl;
 
@@ -49,7 +49,7 @@ int main()
 		cout << i << ":";
 		cin >> input;
 		cout << endl;
-		if (input>'d') // this  mens student did not answered that question
+		if (input == 'o') // this 'o' mens student did not answered that question
 		{
 			continue;
 		}
