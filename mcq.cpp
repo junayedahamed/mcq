@@ -1,20 +1,22 @@
 #include <iostream>
-
+#include <stdlib.h>
+#include <vector>
 
 using namespace std;
 int main()
 {
 	char input1, input4, input2, input3;
-	float plus = 0;
+	float plus = 0, result_s = 0;
 
 	char check;
 	char input;
-	int last=0;
+	int last = 0;
 	int cc = 0;
 	int mc = 0;
-	int ag = 0; //ag= Ans given
+	int ag = 0; // ag= Ans given
 
 	float minus = 0;
+	vector<float> result; // for  storing all result
 
 	cout << "How many question do you have on Your paper: " << endl;
 	cin >> last;
@@ -23,7 +25,7 @@ int main()
 
 	char correct_value[last];
 
-	cout << "Please enter correct answers: " <<endl;
+	cout << "Please enter correct answers: " << endl;
 
 	for (int i = 1; i <= last; i++)
 	{
@@ -33,14 +35,15 @@ int main()
 	}
 
 	// friend asked
-	system("clear");
-	// void clrscr();
+	// system("clear");
+	system("cls");
 
 	cout << "Thanks for input" << endl;
 
-	//fun is a goto function
+	// fun is a goto function
 
-	fun:{
+fun:
+{
 
 	cout << "Enter the answer that given by Student in paper: " << endl;
 
@@ -50,7 +53,7 @@ int main()
 		cout << i << ":";
 		cin >> input;
 		cout << endl;
-		if (input>'d') // this  mens student did not answered that question
+		if (input > 'd') // this  mens student did not answered that question
 		{
 			continue;
 		}
@@ -76,28 +79,49 @@ int main()
 	cout << "!!!Wrong  answer given by Student " << mc << endl;
 	cout << "Your Result: ";
 	cout << plus + minus << endl;
+	result_s = plus + minus;
+	result.push_back(result_s); // storing result on a storage name result[]
 
 	cout << "Check antother paper Y/N" << endl;
+	cout << "Or to check result list press R/r(!!! Recomended to checck result after checking all paper !!!): ";
 	cin >> check;
 
 	if (check == 'Y' || check == 'y')
-		
+
 	{
 		ag = 0;
 		plus = 0;
 		cc = 0;
 		mc = 0;
 		minus = 0;
-		system("clear");
+		result_s = 0;
+		system("cls"); // if your machine is windows then it's ok otherwise comment it
+		// system("clear"); //if you using mac or linux machine then uncomment it
 		goto fun;
 	}
-	if (check=='n'||check=='N')
+	if (check == 'r' || check == 'R')
 	{
+		system("cls"); // if your machine is windows then it's ok otherwise comment it
+		cout << "\t\t\t"
+			 << "Your result list: " << endl;
+		for (int i = 0; i < result.size(); i++)
+		{
+			cout << "Paper " << i << " :" << result[i] << endl;
+		}
 		return 0;
 	}
-	
-	}	
+	if (check == 'n' || check == 'N')
+	{
+		system("cls"); // if your machine is windows then it's ok otherwise comment it
+		cout << "\t\t\t"
+			 << "Your result list: " << endl;
+		for (int i = 0; i < result.size(); i++)
+		{
+			cout << "Paper " << i + 1 << " :" << result[i] << endl;
+		}
+		return 0;
+	}
+}
 
 	return 0;
 }
-
